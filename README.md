@@ -58,7 +58,7 @@ The software comes with two data sets described in Koutsoyiannis and Montanari (
 To reproduce the case study of the Arno River basin as presented by Koutsoyiannis and Montanari (2021) the following R commands can be used:
 
 > data(bluecat_arno)
-> pr4=bluecat.sim(resultcalib=bluecat_arno$calib,dmodelsim=bluecat_arno$dmodel$qsim,qoss=bluecat_arno$dmodel$qoss,plotflag=T,predsmodel="avg")
+> pr1=bluecat.sim(resultcalib=bluecat_arno$calib,dmodelsim=bluecat_arno$dmodel$qsim,qoss=bluecat_arno$dmodel$qoss,plotflag=T,predsmodel="avg")
 
 To reproduce the case study of uncertainty assessment for the tree ring width of Figure 5a of Franke et al. (2022):
 > data(bluecat_TRW)
