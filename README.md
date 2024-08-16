@@ -57,17 +57,13 @@ You may also need to restart R before reinstalling.
 The software comes with two data sets described in Koutsoyiannis and Montanari (2021). They refer to the Arno and Sieve River Basins, in Italy.
 To reproduce the case study of the Arno River basin as presented by Koutsoyiannis and Montanari (2021) the following R commands can be used:
 
-> data(arnosubbiano)
+> data(bluecat_arno)
 
-> pr1=hymod.par(c(100,1,0.5,200,0.5),area=752,tdelta=86400,e=arnosubbiano[,3][1:7305],p=arnosubbiano[,2][1:7305],nstep=length(arnosubbiano[,2][1:7305]),qoss=arnosubbiano[,4][1:7305],qinitial=15,lower=c(10,0.1,0.1,0.1,0.1),upper=c(800,10,0.9,1000,100),opt="DEoptim")
+> pr4=bluecat.sim(resultcalib=bluecat_arno$calib,dmodelsim=bluecat_arno$dmodel$qsim,qoss=bluecat_arno$dmodel$qoss,plotflag=T,predsmodel="avg")
 
-Before moving forward it is advisable to check that optimization gave back reasonable parameter values.
+It is advisable to check that optimization gave back reasonable parameter values.
 
-> pr2=hymod.sim(pr1$par,area=752,tdelta=86400,e=arnosubbiano[,3][1:7305],p=arnosubbiano[,2][1:7305],qinitial=15,qoss=arnosubbiano[,4][1:7305],resultcalib=pr1,bluecat=T,empquant=F,plot=T)
-
-> pr3=hymod.sim(pr1$par,area=752,tdelta=86400,e=arnosubbiano[,3][7306:8036],p=arnosubbiano[,2][7306:8036],qinitial=15,qoss=arnosubbiano[,4][7306:8036],resultcalib=pr1,bluecat=T,empquant=F,plot=T)
-
-A detailed explanation of the argument of the functions hymod.par and hymod.sim is given in the R help. To invoke it the following commands can be used:
+A detailed explanation of the argument of the functions bluecat.sim is given in the R help of Bluecat. To invoke it the following commands can be used:
 
 > ?bluecat.sim
 
