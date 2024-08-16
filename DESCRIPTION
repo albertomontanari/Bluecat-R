@@ -1,0 +1,9 @@
+Package: bluecat
+Type: Package
+Title: An R-package to apply the BLUECAT method in calibration and validation, to convert a deterministic prediction model into a stochastic model with uncertainty assessment
+Version: 0.1
+Date: 2024-08-11
+Author: Alberto Montanari, Demetris Koutsoyiannis
+Maintainer: Alberto Montanari <alberto.montanari@unibo.it>
+Description: A data-driven method to convert a deterministic model into a stochastic model
+License: GPL-3
