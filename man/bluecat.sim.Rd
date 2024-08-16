@@ -36,17 +36,23 @@ Uncertainty is estimated by applying BLUECAT, "A Brisk Local Uncertainty Estimat
 \author{Demetris Koutsoyiannis and Alberto Montanari, email: alberto.montanari@unibo.it.}
 
 \references{
+Franke, J., Evans, M. N., Schurer, A., & Hegerl, G. C. (2022). Climate change detection and attribution using observed and simulated tree-ring width. Climate of the past, 18(12), 2583-2597.
 Koutsoyiannis, D., & Montanari, A. (2022). Bluecat: A local uncertainty estimator for deterministic simulations and predictions. Water Resources Research, 58(1), e2021WR031215.
 
 Nash, J. E., and Sutcliffe, J. V., (1970), River flow forecasting through conceptual models part I – A discussion of principles, J. Hydrol., 10, 282–290, \doi{https://doi.org/10.1016/0022-1694(70)90255-6}. 
 }
 
 \examples{
+## Uncertainty estimation for the simulated river flow of the Arno River at Subbiano (see Koutsoyiannis and Montanari (2022)for details on this case study):
 ## Load data
 data(bluecat_arno)
-
-## Uncertainty estimation for the simulated river flow of the Arno River at Subbiano (see Koutsoyiannis and Montanari (2022)for details on this case study):
 pr1=bluecat.sim(resultcalib=bluecat_arno$calib,dmodelsim=bluecat_arno$dmodel$qsim,qoss=bluecat_arno$dmodel$qoss,plotflag=T,predsmodel="avg")
+
+## Uncertainty estimation for the simulated tree ring width of Figure 5a of Franke et al. (2022):
+## Load data
+data(bluecat_TRW)
+pr1=bluecat.sim(resultcalib=bluecat_TRW$calib,dmodelsim=bluecat_TRW$dmodel$qsim,qoss=bluecat_TRW$dmodel$qoss,plotflag=T,predsmodel="avg",m=50,m1=40,empquant=F,paramd=c(0.1,1,1,NA),lowparamd=c(0.001,0.001,0.001,0),upparamd=c(1,10,20,0.1),cpptresh=-10000)
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
