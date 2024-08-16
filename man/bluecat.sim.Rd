@@ -43,17 +43,10 @@ Nash, J. E., and Sutcliffe, J. V., (1970), River flow forecasting through concep
 
 \examples{
 ## Load data
-data(arnosubbiano)
+data(bluecat_arno)
 
-## Model parameterisation with hymod.par
-pr1=hymod.par(c(100,1,0.5,200,0.5),area=752,tdelta=86400,e=arnosubbiano[,3][1:7305],p=arnosubbiano[,2][1:7305],nstep=length(p[1:7305]),qoss=arnosubbiano[,4][1:7305],qinitial=15,lower=c(10,0.1,0.1,0.1,0.1),upper=c(800,10,0.9,1000,100),opt="DEoptim")
-
-## Run BLUECAT to perform simulation in calibration mode
-pr2=hymod.sim(pr1$par,area=752,tdelta=86400,e=arnosubbiano[,3][1:7305],p=arnosubbiano[,2][1:7305],qinitial=15,qoss=arnosubbiano[,4][1:7305],resultcalib=pr1,bluecat=T,empquant=F,plot=T)
-
-## Run BLUECAT to perform simulation in validation mode
-pr3=hymod.sim(pr1$par,area=752,tdelta=86400,e=arnosubbiano[,3][7306:8036],p=arnosubbiano[,2][7306:8036],qinitial=15,qoss=arnosubbiano[,4][7306:8036],resultcalib=pr1,bluecat=T,empquant=F,plot=T)
-
+## Uncertainty estimation for the simulated river flow of the Arno River at Subbiano (see Koutsoyiannis and Montanari (2022)for details on this case study):
+pr1=bluecat.sim(resultcalib=bluecat_arno$calib,dmodelsim=bluecat_arno$dmodel$qsim,qoss=bluecat_arno$dmodel$qoss,plotflag=T,predsmodel="avg")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
