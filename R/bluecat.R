@@ -1,5 +1,5 @@
 ################################################################
-### R function to apply Bluecat - To be completed, in the present form it still calls HyMod - Actually now hymod is not there anymore - small change on July 1st, 2024
+### R function to apply Bluecat
 ################################################################
 
 bluecat.sim<-function(resultcalib,dmodelsim,predsmodel="avg",empquant=F,siglev=0.2,m=100,m1=80,paramd=c(0.1,1,10,NA),lowparamd=c(0.001,0.001,0.001,0),upparamd=c(1,5,20,NA),qoss=NULL,plotflag=F,cpptresh=-Inf)
