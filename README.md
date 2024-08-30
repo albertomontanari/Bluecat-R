@@ -35,30 +35,31 @@ To install the software in R under the Linux operating system the following comm
 
 > install.packages("devtools")
 > library(devtools)
-> install_github("albertomontanari/hymodbluecat")
-> library(hymodbluecat)
+> install_github("albertomontanari/Bluecat-R")
+> library(Bluecat-R)
 
 To install the software in R under the Windows operating system first download and install Rtools from http://cran.r-project.org/bin/windows/Rtools/) and then:
 
 > install.packages("devtools")
 > library(devtools)
 > find_rtools()
-> install_github("albertomontanari/hymodbluecat")
+> install_github("albertomontanari/Bluecat-R")
 > library(hymodbluecat)
 
 Please note that the latest version of R may be needed, so beware of the warnings that you may get during installation.
 
 If you wish to reinstall the package, beware that you need to detach it first, with the instruction
 
-> detach("package:hymodbluecat", unload=TRUE)
+> detach("package:Bluecat-R", unload=TRUE)
 
 You may also need to restart R before reinstalling.
 
-The software comes with two data sets described in Koutsoyiannis and Montanari (2021). They refer to the Arno and Sieve River Basins, in Italy.
-To reproduce the case study of the Arno River basin as presented by Koutsoyiannis and Montanari (2021) the following R commands can be used:
+The software comes with two data sets described in Montanari and Koutsoyiannis (2024, preprint). They refer to the prediction of tree ring withds and the prediction of daily river flow for the Arno River Basin, in Italy.
+
+To reproduce the case studies presented by Montanari and Koutsoyiannis (2024, preprint) the following R commands can be used:
 
 > data(bluecat_arno)
-> pr1=bluecat.sim(resultcalib=bluecat_arno$calib,dmodelsim=bluecat_arno$dmodel$qsim,qoss=bluecat_arno$dmodel$qoss,plotflag=T,predsmodel="avg")
+> pr1=bluecat.sim(bluecat_arno$resultcalib,bluecat_arno$dmodelsim,nmodels=2,qoss=bluecat_arno$dmodelsim$qoss,plotflag=T,predsmodel="avg",m=100,m1=80)
 
 To reproduce the case study of uncertainty assessment for the tree ring width of Figure 5a of Franke et al. (2022):
 > data(bluecat_TRW)
@@ -71,3 +72,10 @@ A detailed explanation of the argument of the functions bluecat.sim is given in 
 > ?bluecat.sim
 
 Please contact me if you would like additional help.
+
+References
+
+Franke, J., Evans, M. N., Schurer, A., & Hegerl, G. C. (2022). Climate change detection and attribution using observed and simulated tree-ring width. Climate of the past, 18(12), 2583-2597.
+Koutsoyiannis, D., & Montanari, A. (2022). Bluecat: A local uncertainty estimator for deterministic simulations and predictions. Water Resources Research, 58(1), e2021WR031215.
+Montanari, A. & Koutsoyiannis, D. (2024). Uncertainty estimation for environmental multimodel simulations: the BLUECAT approach and software. Submitted manuscript.
+
