@@ -50,16 +50,23 @@ The R libraries can be installed with the following commands:
 To install the software in R under the Linux operating system the following commands can be used:
 
 > install.packages("devtools")
+
 > library(devtools)
+
 > install_github("albertomontanari/Bluecat-R")
+
 > library(Bluecat-R)
 
 To install the software in R under the Windows operating system first download and install Rtools from http://cran.r-project.org/bin/windows/Rtools/) and then:
 
 > install.packages("devtools")
+
 > library(devtools)
+
 > find_rtools()
+
 > install_github("albertomontanari/Bluecat-R")
+
 > library(hymodbluecat)
 
 Please note that the latest version of R may be needed, so beware of the warnings that you may get during installation.
@@ -75,10 +82,13 @@ The software comes with two data sets described in Montanari and Koutsoyiannis (
 To reproduce the case studies presented by Montanari and Koutsoyiannis (2024, preprint) the following R commands can be used:
 
 > data(bluecat_arno)
+
 > pr1=bluecat.sim(bluecat_arno$resultcalib,bluecat_arno$dmodelsim,nmodels=2,qoss=bluecat_arno$dmodelsim$qoss,plotflag=T,predsmodel="avg",m=100,m1=80)
 
 To reproduce the case study of uncertainty assessment for the tree ring width of Figure 5a of Franke et al. (2022):
+
 > data(bluecat_TRW)
+
 > pr1=bluecat.sim(resultcalib=bluecat_TRW$calib,dmodelsim=bluecat_TRW$dmodel$qsim,qoss=bluecat_TRW$dmodel$qoss,plotflag=T,predsmodel="avg",m=50,m1=40,empquant=F,paramd=c(0.1,1,1,NA),lowparamd=c(0.001,0.001,0.001,0),upparamd=c(1,10,20,0.1),cpptresh=-10000)
 
 It is advisable to check that optimization gave back reasonable parameter values.
