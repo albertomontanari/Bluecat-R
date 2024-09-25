@@ -27,8 +27,11 @@ sudo apt-get install libxml2-dev libcurl4-openssl-dev libssl-dev libfontconfig1-
 The R libraries can be installed with the following commands:
 
 > install.packages("DescTools")
+
 > install.packages("DEoptim")
+
 > library(DescTools)
+
 > library(DEoptim)
 
 To install the software in R under the Linux operating system the following commands can be used:
