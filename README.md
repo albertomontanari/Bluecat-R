@@ -55,7 +55,7 @@ To install the software in R under the Linux operating system the following comm
 
 > install_github("albertomontanari/Bluecat-R")
 
-> library(Bluecat-R)
+> library(Bluecat)
 
 To install the software in R under the Windows operating system first download and install Rtools from http://cran.r-project.org/bin/windows/Rtools/) and then:
 
@@ -73,7 +73,7 @@ Please note that the latest version of R may be needed, so beware of the warning
 
 If you wish to reinstall the package, beware that you need to detach it first, with the instruction
 
-> detach("package:Bluecat-R", unload=TRUE)
+> detach("package:Bluecat", unload=TRUE)
 
 You may also need to restart R before reinstalling.
 
