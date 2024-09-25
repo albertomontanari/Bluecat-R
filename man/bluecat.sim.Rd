@@ -1,5 +1,5 @@
-\name{hymod.sim}
-\alias{hymod.sim}
+\name{bluecat.sim}
+\alias{bluecat.sim}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Software working in the R environment for producing confidence limits of a generic prediction, obtained via a single model or multiple models, through comparison with observed data. Confidence limits are estimated by applying the BLUECAT method that transforms any deterministic model in a stochastic model, from which mean stochastic simulation and confidence limits are obtained. For more details please refer to https:\www.albertomontanari.it\bluecat, Koutsoyiannis and Montanari (2022) and Montanari and Koutsoyannis (2024, preprint)}
