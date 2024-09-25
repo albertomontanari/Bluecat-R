@@ -4,7 +4,9 @@ For more details please refer to https:\\www.albertomontanari.it\bluecat
 
 The following R libraries are needed to run the package:
 - devtools
+
 - DescTools
+
 - DEoptim 
 
 Furhtermore, the following libraries are needed to run the package under the Linux operating system:
