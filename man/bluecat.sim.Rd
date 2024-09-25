@@ -30,7 +30,7 @@ bluecat.sim<-function(resultcalib,dmodelsim,nmodels=1,uncmeas=2, predsmodel="avg
 \item{outputlist$stochprediction}{It is a list of stochastic model outputs for each considered model and the multimodel simulation.}
 \item{outputlist$lowlimit}{List with lower confidence limit obtained with BLUECAT for each considered model and the multimodel simulation.}
 \item{outputlist$uplimit}{List with lower confidence limit obtained with BLUECAT for each considered model and the multimodel simulation.}
-\item{posminn}{Identification number of the best prediction model at each time step.}
+\item{posminn}{Identification number of the best prediction model at each time step.}}
 
 \details{
 Uncertainty is estimated by applying BLUECAT, "A Brisk Local Uncertainty Estimator for Hydrologic Simulations and Predictions", introduced by Koutsoyiannis and Montanari (2022). BLUECAT estimates the lower and upper confidence limits of the HyMod simulation for a given confidence level. Goodness of fit testing for BLUECAT is performed by plotting a scatterplot of observed river flow against the mean stochastic simulation obtained with BLUECAT along with the related confidence limits, by plotting the Coverage Probability Plot and computing the Prediction Technical Performance indexes as in Koutsoyiannis and Montanari (2022).}
