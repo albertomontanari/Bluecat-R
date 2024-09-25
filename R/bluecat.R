@@ -478,7 +478,9 @@ if (nmodels>1)
     uplimit[[nmodels+1]]=newuplim
     }
   }
-return(list(detprediction=detprediction,stochprediction=stochprediction,lowlimit=lowlimit,uplimit=uplimit,effsmodel=effsmodel,posminn=posminn))
+if(nmodels>1)
+    return(list(detprediction=detprediction,stochprediction=stochprediction,lowlimit=lowlimit,uplimit=uplimit,effsmodel=effsmodel,posminn=posminn)) else
+    return(list(detprediction=detprediction,stochprediction=stochprediction,lowlimit=lowlimit,uplimit=uplimit,effsmodel=effsmodel))
 }
 
 #########################################################################
