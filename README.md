@@ -10,16 +10,27 @@ The following R libraries are needed to run the package:
 - DEoptim 
 
 Furhtermore, the following libraries are needed to run the package under the Linux operating system:
+
 -libxml2-dev
+
 -libcurl4-openssl-dev
+
 -libssl-dev
+
 -libfontconfig1-dev
+
 -libharfbuzz-dev
+
 -libfribidi-dev
+
 -libfreetype6-dev
+
 -libpng-dev
+
 -libtiff5-dev
+
 -libjpeg-dev
+
 -libharfbuzz-dev
 
 Additional libraries may be needed depending on the Linux version. Under Ubuntu 24.04 they can be installed by the following Linux command line:
