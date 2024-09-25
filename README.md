@@ -89,7 +89,7 @@ To reproduce the case study of uncertainty assessment for the tree ring width of
 
 > data(bluecat_TRW)
 
-> pr1=bluecat.sim(resultcalib=bluecat_TRW$calib,dmodelsim=bluecat_TRW$dmodel$qsim,qoss=bluecat_TRW$dmodel$qoss,plotflag=T,predsmodel="avg",m=50,m1=40,empquant=F,paramd=c(0.1,1,1,NA),lowparamd=c(0.001,0.001,0.001,0),upparamd=c(1,10,20,0.1),cpptresh=-10000)
+> pr1=bluecat.sim(resultcalib=bluecat_TRW$resultcalib,dmodelsim=bluecat_TRW$dmodelsim,qoss=bluecat_TRW$dmodelsim$qoss,plotflag=T,predsmodel="avg",m=50,m1=40,empquant=F,paramd=c(0.1,1,1,NA),lowparamd=c(0.001,0.001,0.001,0),upparamd=c(1,10,20,0.1))
 
 It is advisable to check that optimization gave back reasonable parameter values.
 
