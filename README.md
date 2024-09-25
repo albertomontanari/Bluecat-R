@@ -102,6 +102,8 @@ Please contact me if you would like additional help.
 References
 
 Franke, J., Evans, M. N., Schurer, A., & Hegerl, G. C. (2022). Climate change detection and attribution using observed and simulated tree-ring width. Climate of the past, 18(12), 2583-2597.
+
 Koutsoyiannis, D., & Montanari, A. (2022). Bluecat: A local uncertainty estimator for deterministic simulations and predictions. Water Resources Research, 58(1), e2021WR031215.
+
 Montanari, A. & Koutsoyiannis, D. (2024). Uncertainty estimation for environmental multimodel simulations: the BLUECAT approach and software. Submitted manuscript.
 
