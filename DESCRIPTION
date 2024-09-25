@@ -1,4 +1,4 @@
-Package: bluecat
+Package: Bluecat-R
 Type: Package
 Title: An R-package to apply the BLUECAT method in calibration and validation, to convert a deterministic prediction model into a stochastic model with uncertainty assessment
 Version: 0.1
