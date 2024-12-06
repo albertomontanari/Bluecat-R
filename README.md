@@ -97,6 +97,7 @@ A detailed explanation of the argument of the functions bluecat.sim is given in 
 
 > ?bluecat.sim
 
+Note: the routine may file if the fitting of the parameters of the PBF distribution fails when estimating confidence bands with robust quantiles. If you get an unexpected break of the routine please try diffierent values for upper and lower bounds of the PBF parameters.
 Please contact me if you would like additional help.
 
 References
