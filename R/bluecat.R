@@ -2,7 +2,7 @@
 ### R function to apply Bluecat
 ################################################################
 
-bluecat.sim<-function(resultcalib,dmodelsim,nmodels=1,uncmeas=2, predsmodel="avg",empquant=F,siglev=0.2,m=100,m1=80,paramd=c(0.1,1,10,NA),lowparamd=c(0.001,0.001,0.001,0),upparamd=c(1,5,20,NA),qoss=NULL,plotflag=F,cpptresh=-Inf)
+bluecat.sim<-function(resultcalib,dmodelsim,nmodels=1,uncmeas=2, predsmodel="avg",empquant=F,siglev=0.2,m=100,m1=80,paramd=c(0.1,1,10,NA),lowparamd=c(0.001,0.5,0.001,0),upparamd=c(1,5,20,NA),qoss=NULL,plotflag=F,cpptresh=-Inf)
 {
 #Definition of lists of model output
 detprediction=list()
@@ -10,6 +10,8 @@ stochprediction=list()
 lowlimit=list()
 uplimit=list()
 effsmodel=list()
+c1=0
+c2=0
 #Variable zeta serves for the diagnostic plots if required
 zeta=list()
 if(is.null(dev.list())==F) graphics.off()
