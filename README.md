@@ -67,7 +67,7 @@ To install the software in R under the Windows operating system first download a
 
 > install_github("albertomontanari/Bluecat-R")
 
-> library(hymodbluecat)
+> library(Bluecat)
 
 Please note that the latest version of R may be needed, so beware of the warnings that you may get during installation.
 
