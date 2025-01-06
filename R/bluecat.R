@@ -10,6 +10,8 @@ stochprediction=list()
 lowlimit=list()
 uplimit=list()
 effsmodel=list()
+effcalib=list()
+errcalib=list()
 c1=0
 c2=0
 #Variable zeta serves for the diagnostic plots if required
@@ -43,6 +45,8 @@ if(is.null(dev.list())==F) graphics.off()
     medpred=rep(0,nstep)
     infpred=rep(0,nstep)
     suppred=rep(0,nstep)
+    effcal=rep(0,nstep)
+    errcal=rep(0,nstep)
     cat("Model ",fmodels,sep="",fill=T)
     #Definition of auxiliary variable icount, to be used only to print on screen the progress of computation
     icount=1
@@ -77,6 +81,9 @@ if(is.null(dev.list())==F) graphics.off()
       #Compute mean stochastic prediction
       if(predsmodel=="avg") medpred[i]=mean(qossc[aux2:aux1])
       if(predsmodel=="mdn") medpred[i]=median(qossc[aux2:aux1])
+      #Compute Nash efficienty and mean absolute error for observed and simulated data)
+      effcal[i]=1-sum((sortcalibsim[aux2:aux1]-qossc[aux2:aux1])^2)/sum(qossc[aux2:aux1]-mean(qossc[aux2:aux1])^2)
+      errcal[i]=mean(abs(sortcalibsim[aux2:aux1]-qossc[aux2:aux1]))
       }
     #Put back medpred in chronological order
     medpred=medpred[order(aux)]
@@ -333,6 +340,8 @@ if(is.null(dev.list())==F) graphics.off()
     stochprediction[[fmodels]]=medpred
     lowlimit[[fmodels]]=infpred
     uplimit[[fmodels]]=suppred
+    effcalib[[fmodels]]=effcal
+    errcalib[[fmodels]]=errcal
     effsmodel[[fmodels]]=eff
     } else
     {
@@ -340,6 +349,8 @@ if(is.null(dev.list())==F) graphics.off()
     stochprediction[[fmodels]]=medpred
     lowlimit[[fmodels]]=infpred
     uplimit[[fmodels]]=suppred
+    effcalib[[fmodels]]=effcal
+    errcalib[[fmodels]]=errcal
     }
   }
 
@@ -362,8 +373,10 @@ if (nmodels>1)
       {
       if (uncmeas==2) confband[ii,i]=abs((uplimit[[ii]][i]-lowlimit[[ii]][i])/stochprediction[[ii]][i]) else if (uncmeas==1)
       confband[ii,i]=abs(uplimit[[ii]][i]-lowlimit[[ii]][i]) else if (uncmeas==3)
-      confband[ii,i]=abs(detprediction[[ii]][i]-stochprediction[[ii]][i]) else
-      confband[ii,i]=abs((detprediction[[ii]][i]-stochprediction[[ii]][i])/stochprediction[[ii]][i])
+      confband[ii,i]=abs(detprediction[[ii]][i]-stochprediction[[ii]][i]) else if (uncmeas==4)
+      confband[ii,i]=abs((detprediction[[ii]][i]-stochprediction[[ii]][i])/stochprediction[[ii]][i]) else if (uncmeas==5)
+      confband[ii,i]=effcalib[[ii]][i] else
+      confband[ii,i]=errcalib[[ii]][i]
       }
     posmin=which.min(abs(confband[,i]))
     if(is.na(max(confband[,i]))) posmin=which.max(effsmodel)
@@ -481,7 +494,7 @@ if (nmodels>1)
     }
   }
 if(nmodels>1)
-    return(list(detprediction=detprediction,stochprediction=stochprediction,lowlimit=lowlimit,uplimit=uplimit,effsmodel=effsmodel,posminn=posminn)) else
+    return(list(confband=confband, detprediction=detprediction,stochprediction=stochprediction,lowlimit=lowlimit,uplimit=uplimit,effsmodel=effsmodel,posminn=posminn)) else
     return(list(detprediction=detprediction,stochprediction=stochprediction,lowlimit=lowlimit,uplimit=uplimit,effsmodel=effsmodel))
 }
 
